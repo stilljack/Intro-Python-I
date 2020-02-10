@@ -30,3 +30,47 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+ # debug
+arguments = len(sys.argv) - 1
+for i in sys.argv:
+    print (i)
+print ("the script is called with %i arguments" % (arguments))
+#debug
+#going to assume first sys argv is always the name of the file being run
+
+
+
+
+date =datetime.now()
+month= date.month
+year = date.year
+if (arguments==0):
+    print("no args supplied, using system values")
+if (arguments==1):
+    if(sys.argv[1].isnumeric()):
+        print(f"{sys.argv[1]}first arg is numeric")
+        month = sys.argv[1]
+    else:
+        print("non-numeric value supplied, please provide the months numeral value i.e 1-12 with no leading 0")
+elif (arguments==2):
+    if(sys.argv[2].isnumeric() & sys.argv[1].isnumeric()):
+        print(f"{sys.argv[1]} first arg is numeric \n{sys.argv[2]} second arg is numeric")
+        month = sys.argv[1]
+        year = sys.argv[2]
+    else:
+        print("non-numeric value supplied, please provide the months numeral value i.e 1-12 with no leading 0 and the 4 digit year")
+
+
+print(f"month = {month}")
+print(f"year = {year}")
+
+def printCal(month=month, year=year):
+    cal = calendar.TextCalendar(calendar.MONDAY)
+    printStr = cal.formatmonth(year,month)
+    print(printStr)
+
+printCal(int(month),int(year))
+
+
+## the error checking could be better, lots of this could be more eloquent, but it's functional more or less now.
