@@ -10,8 +10,8 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
-readfile = open('foo.txt', 'r')
-print(readfile)
+# readfile = open('foo.txt', 'r')
+# print(readfile)
 #neat
 
 with open('foo.txt') as f:
