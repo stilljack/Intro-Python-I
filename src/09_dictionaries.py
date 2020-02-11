@@ -54,8 +54,8 @@ print (waypoints[1])
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
 
-for i in waypoints:
-    print (f"\n\nwaypoint = {i['name']}")
-    for v in i.keys():
-        print(f"{v} ={i[v]}")
+for k in waypoints:
+    print (f"\n\nwaypoint = {k['name']}")
+    for v in k:
+        print(f"{v} ={k[v]}")
 
