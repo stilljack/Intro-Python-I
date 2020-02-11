@@ -55,4 +55,7 @@ print (waypoints[1])
 # YOUR CODE HERE
 
 for i in waypoints:
-    print(i)
+    print (f"\n\nwaypoint = {i['name']}")
+    for v in i.keys():
+        print(f"{v} ={i[v]}")
+
